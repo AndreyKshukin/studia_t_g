@@ -1,0 +1,12 @@
+{
+  "name": "studia_t_g",
+  "displayName": "studia_t_g",
+  "expo": {
+    "name": "studia_t_g",
+    "slug": "studia_t_g",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}

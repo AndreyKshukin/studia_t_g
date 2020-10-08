@@ -1,0 +1,60 @@
+{
+  "parser": "@typescript-eslint/parser",
+
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    // "unicorn" ,
+    "import"
+  ],
+
+  "extends": [
+    "@react-native-community",
+    // "airbnb-typescript",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "prettier/@typescript-eslint",
+    "prettier/react"
+  ],
+
+  "parserOptions": {
+    "ecmaVersion": 2020,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+
+  "rules": {
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ],
+    "prefer-const": [
+      "error",
+      {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": true
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error", // Проверяем правила хуков
+    "react-hooks/exhaustive-deps": "warn", // Проверяем зависимости эффекта
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": ["error"]
+    // "@typescript-eslint/explicit-module-boundary-types": [
+    //   "error",
+    //   {
+    //     "allowArgumentsExplicitlyTypedAsAny": true,
+    //     "allowedNames": ["ignoredFunctionName", "ignoredMethodName"]
+    //   }
+    // ]
+  },
+
+  "root": true
+}
