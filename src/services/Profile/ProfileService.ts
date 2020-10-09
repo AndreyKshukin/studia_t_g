@@ -28,14 +28,27 @@ async function fetchByItem(
   profile: IProfileTeaser,
 ): Promise<IResponse<IProfileDetail[]>> {
   try {
-    //Нет конкретной ссылки для запросы данных об узере.
-    //так что профиль не совпадает.
-    const link = `${routes.mainLink}?email=${profile.email}`;
-    const response = await fetch(link);
-    if (!response.ok) {
-      throw new Error('Cannot fetch data');
-    }
-    return response.json();
+    // Нет конкретной ссылки для запроса данных о пользователе.
+    // Поэтому придумываем дополнительные данные
+    const profileDetail: IProfileDetail = {
+      ...profile,
+      phone: '+7 (999) 888-77-29',
+      dob: {
+        date: '09.10.2020',
+        age: 'unknown',
+      },
+    };
+    const list: IResponse<IProfileDetail[]> = {
+      results: [profileDetail],
+    };
+    return list;
+    // Если был бы запрос пользователя, то это выгядело вот так
+    // const link = `${routes.mainLink}?email=${profile.email}`;
+    // const response = await fetch(link);
+    // if (!response.ok) {
+    //   throw new Error('Cannot fetch data');
+    // }
+    // return response.json();
   } catch (error) {
     console.log(error);
     throw error;
